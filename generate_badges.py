@@ -42,7 +42,7 @@ def make_grayscale(img):
     )
 
     enhancer = ImageEnhance.Brightness(rgba)
-    return enhancer.enhance(0.6)
+    return enhancer.enhance(0.4)
 
 # Use a real font that supports accents
 def load_font(size):
