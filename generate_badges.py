@@ -148,7 +148,7 @@ def create_badge(title, filename, description, image_name, attribution):
         draw,
         description,
         font_desc,
-        SIZE[0],
+        SIZE[0] * 0.9,
         SIZE[0] / 2,
         160,
         (220, 220, 220)
@@ -160,9 +160,9 @@ def create_badge(title, filename, description, image_name, attribution):
         draw,
         "Attribution : " + attribution,
         attribution_desc,
-        SIZE[0],
+        SIZE[0] * 0.9,
         SIZE[0] / 2,
-        200,
+        205,
         (220, 220, 220)
     )
 
