@@ -3,9 +3,12 @@ Feuilles d'expérience de la cohorte 2026
 
 ## Générateur de badges
 
+### Créer l'environnement Python local
+
 ```bash
 python -m venv .python_env
 ```
+### Activer l'environnement Python local
 
 Windows :
 ```bash
@@ -15,4 +18,10 @@ Windows :
 macOS / Linux :
 ```bash
 source .python_env/bin/activate
+```
+
+### Installer les paquets Python
+
+```bash
+pip install -r python_requirements.txt
 ```
