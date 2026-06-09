@@ -42,7 +42,7 @@ def make_grayscale(img):
     )
 
     enhancer = ImageEnhance.Brightness(rgba)
-    return enhancer.enhance(0.4)
+    return enhancer.enhance(0.6)
 
 # Use a real font that supports accents
 def load_font(size):
@@ -122,7 +122,9 @@ def create_badge(title, filename, description, image_name):
             SIZE[1] - padding
         ],
         radius=20,
-        fill=(70, 70, 60)
+        fill=(70, 70, 60),
+        outline=(212, 175, 55),  # couleur or
+        width=5
     )
 
     # --- TITLE ---
@@ -130,9 +132,9 @@ def create_badge(title, filename, description, image_name):
     title_w = bbox[2] - bbox[0]
 
     draw.text(
-        ((SIZE[0] - title_w) / 2, 15),
+        ((SIZE[0] - title_w) / 2, 20),
         title,
-        fill=color,
+        fill=(212, 175, 55),  # couleur or
         font=font_title
     )
 
