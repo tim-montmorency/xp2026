@@ -98,7 +98,7 @@ def draw_wrapped_text(draw, text, font, max_width, x, y, fill):
     return y + len(lines) * line_height
 
 
-def create_badge(title, filename, description, image_name):
+def create_badge(title, filename, description, image_name, attribution):
     img = Image.new("RGBA", SIZE, (0, 0, 0, 0))
     draw = ImageDraw.Draw(img)
 
@@ -150,7 +150,19 @@ def create_badge(title, filename, description, image_name):
         font_desc,
         SIZE[0],
         SIZE[0] / 2,
-        170,
+        160,
+        (220, 220, 220)
+    )
+
+    # --- ATTRIBUTION ---
+    attribution_desc = load_font(11)
+    draw_wrapped_text(
+        draw,
+        "Attribution : " + attribution,
+        attribution_desc,
+        SIZE[0],
+        SIZE[0] / 2,
+        200,
         (220, 220, 220)
     )
 
@@ -179,7 +191,8 @@ def main():
                 row["titre"],
                 row["fichier"],
                 row["description"],
-                row["image"]
+                row["image"],
+                row["attribution"]
             )
 
     generate_readme(rows)
