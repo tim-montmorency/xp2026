@@ -150,7 +150,7 @@ def create_badge(title, filename, description, image_name):
         font_desc,
         SIZE[0],
         SIZE[0] / 2,
-        180,
+        170,
         (220, 220, 220)
     )
 
