@@ -14,15 +14,35 @@ ASSETS_DIR = BASE_DIR / "images"
 
 OUTPUT_DIR.mkdir(exist_ok=True)
 
+def generate_readme(rows):
+    readme_path = OUTPUT_DIR / "README.md"
+
+    def md_badge(row):
+        title = row["titre"]
+        desc = row["description"]
+        file = row["fichier"]
+
+        return f"![{title} : {desc}]({file})"
+
+    lines = []
+    lines.append("# 🎖️ Badges générés\n")
+
+    # ligne compacte (tout sur une ligne)
+    line = " ".join(md_badge(r) for r in rows)
+    lines.append(line + "\n")
+
+    readme_path.write_text("\n".join(lines), encoding="utf-8")
+
 def make_grayscale(img):
-    # 1. convert to grayscale
-    gray = ImageOps.grayscale(img).convert("RGB")
+    gray = ImageOps.grayscale(img)
 
-    # 2. reduce brightness
-    enhancer = ImageEnhance.Brightness(gray)
-    darker = enhancer.enhance(0.6)  # 0.0 = black, 1.0 = original
+    rgba = Image.merge(
+        "RGBA",
+        (gray, gray, gray, img.split()[3])
+    )
 
-    return darker
+    enhancer = ImageEnhance.Brightness(rgba)
+    return enhancer.enhance(0.6)
 
 # Use a real font that supports accents
 def load_font(size):
@@ -79,7 +99,7 @@ def draw_wrapped_text(draw, text, font, max_width, x, y, fill):
 
 
 def create_badge(title, filename, description, image_name):
-    img = Image.new("RGBA", SIZE, (25, 25, 25))
+    img = Image.new("RGBA", SIZE, (0, 0, 0, 0))
     draw = ImageDraw.Draw(img)
 
     font_title = load_font(22)
@@ -110,7 +130,7 @@ def create_badge(title, filename, description, image_name):
     title_w = bbox[2] - bbox[0]
 
     draw.text(
-        ((SIZE[0] - title_w) / 2, 10),
+        ((SIZE[0] - title_w) / 2, 15),
         title,
         fill=color,
         font=font_title
@@ -135,7 +155,7 @@ def create_badge(title, filename, description, image_name):
     base_path = OUTPUT_DIR / filename
 
     # save normal
-    img.convert("RGB").save(base_path)
+    img.save(base_path, format="PNG")
 
     # save grayscale version
     gray_img = make_grayscale(img)
@@ -143,20 +163,24 @@ def create_badge(title, filename, description, image_name):
         base_path.stem + "_" + base_path.suffix
     )
 
-    gray_img.save(gray_path)
+    gray_img.save(gray_path, format="PNG")
 
 
 def main():
+    rows = []
     with open(DATA_FILE, newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
 
         for row in reader:
+            rows.append(row)
             create_badge(
                 row["titre"],
                 row["fichier"],
                 row["description"],
                 row["image"]
             )
+
+    generate_readme(rows)
 
     print(f"Badges générés dans {OUTPUT_DIR}")
 

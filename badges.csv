@@ -1,4 +1,17 @@
 fichier,titre,description,image
-volontaire.png,Volontaire,"A participé à une activité bénévole, avec engagement",ghost.svg
-leader.png,Leadership,"A montré des compétences de leadership, dans des projets",strength.svg
-curieux.png,Curiosité,"A exploré des activités supplémentaires, au-delà du programme",book.svg
+brise_glace.png,Brise-glace,"A participé à l'activité brise-glace",ice.svg
+tome_savoir.png,Tome du savoir,"A emprunté un document de la bibliothèque de la bibliographie suggérée",book.svg
+pilier_communaute.png,Pilier de la communauté,"A participé au comité étudiant",brick.svg
+sentinelle.png,Sentinelle,"A aidé à l'organisation du brise-glace (hors 1ère année)",open_hands.svg
+membre_communaute.png,Membre de la communauté,"A participé à une activité du comité étudiant",heart.svg
+tete_chercheuse.png,Tête chercheuse,"A participé au tutorat en 1ère année",bullseye.svg
+disciple_aguerri.png,Disciple aguerri,"A participé au tutorat en 2ème année",brain.svg
+flambeau_savoir.png,Flambeau du savoir,"A été tutrice ou tuteur",fire.svg
+heraut.png,Héraut,"A participé à faire rayonner le programme lors des portes ouvertes",horn.svg
+intendance_extradimensionnelle.png,Intendance extradimensionnelle,"Responsabilité avec le prêt d'équipement collectif",screwdriver.svg
+scribe.png,Scribe,"A aidé à la mise à jour des badges",scroll.svg
+quete_optionnelle.png,Quête optionnelle,"A participé à un événement multimédia non requis",question.svg
+essayiste.png,Essayiste,"A participé et été présent au concours d'essais audiovisuels",movie.svg
+niveau_experience_1.png,Niveau d'expérience 1,"A complété tous ses cours de première année",floppy.svg
+niveau_experience_2.png,Niveau d'expérience 2,"A complété tous ses cours de deuxième année",cd.svg
+niveau_experience_3.png,Niveau d'expérience 3,"A complété tous ses cours de troisième année",trophy.svg

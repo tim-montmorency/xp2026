@@ -1,7 +1,10 @@
 # xp2026
 Feuilles d'expérience de la cohorte 2026
 
+
 ## Générateur de badges
+
+Images tirées de https://twemoji.godi.se/#/
 
 ### Créer l'environnement Python local
 
