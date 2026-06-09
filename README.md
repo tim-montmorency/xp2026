@@ -28,3 +28,11 @@ source .python_env/bin/activate
 ```bash
 pip install -r python_requirements.txt
 ```
+
+### Générer les badges
+
+La description des badges est dans le fichier `badges.csv`.
+
+```bash
+python generate_badges.py
+```
