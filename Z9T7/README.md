@@ -1,6 +1,7 @@
 # Feuille d'expérience Z9T7
 
-> [!IMPORTANT] C'est la responsabilité de l'étudiant de faire la demande des badges auprès des personnes indiqué pour l'attribution.
+> [!IMPORTANT]
+> C'est la responsabilité de l'étudiant de faire la demande des badges auprès des personnes indiqué pour l'attribution.
 
 ## Général
 
